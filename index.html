@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Souvenirs personalizados y maquetas únicas en Vancouver, envíos gratis en 24h">
+  <meta name="keywords" content="souvenirs Vancouver, maquetas personalizadas, toppers eventos">
+  <title>Billybon Detalles Vancouver | Vancouver Landings</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    header {
+      background-image: linear-gradient(to bottom, rgba(255, 64, 129, 0.7), rgba(255, 204, 203, 0.3)), url('https://res.cloudinary.com/dvm4ql8eo/image/upload/v1740535264/Pastel_Rainbow_Modern_January_Monthly_Email_Header_slgfbg.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .bg-rosa-600 { background-color: #FF4081; }
+    .bg-rosa-300 { background-color: #FF6699; }
+    .bg-rosa-200 { background-color: #FF99B4; }
+    .text-rosa-600 { color: #FF4081; }
+    .hover:bg-rosa-200 { background-color: #FF99B4; }
+    .text-rosa-300 { color: #FF6699; }
+    .text-rosa-100 { color: #FFF5F7; }
+    .text-rosa-50 { color: #FFCCCB; }
+    .hover:shadow-lg { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+    #navbar {
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    #navbar.scrolled {
+      background-color: #FF4081;
+      transform: translateY(0);
+    }
+    #navbar-logo {
+      transition: all 0.3s ease;
+    }
+    #navbar.scrolled #navbar-logo {
+      width: 3rem;
+      opacity: 1;
+    }
+    #navbar-logo.hidden {
+      opacity: 0;
+    }
+    .badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #FF99B4;
+      color: #FFFFFF;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px; /* Tailwind: rounded-full */
+      font-size: 0.875rem;
+      font-weight: 600;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+      animation: float 2s infinite ease-in-out;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+<!-- Menú Sticky (Navbar Fijo) -->
+<nav id="navbar" class="fixed top-0 left-0 w-full bg-transparent text-white py-2 z-50 transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+    <!-- Contenedor del logo y el nombre -->
+    <div class="flex items-center space-x-4">
+      <div id="navbar-logo" class="hidden">
+        <img src="https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,w_300/v1740524420/e0fdac21_q0oh9e.png" alt="Logo Billybon Detalles" class="w-12 h-12 object-contain rounded-full">
+      </div>
+      <h1 class="text-2xl font-bold">Billybon Detalles</h1>
+    </div>
+
+    <!-- Menú de Navegación -->
+    <div class="flex sm:hidden">
+      <button id="menu-toggle" class="focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div class="space-x-6 hidden sm:flex items-center">
+      <a href="#productos" class="hover:text-rosa-200">Productos</a>
+      <a href="#nosotros" class="hover:text-rosa-200">Nosotros</a>
+      <a href="#galeria" class="hover:text-rosa-200">Galería</a>
+      <a href="#testimonios" class="hover:text-rosa-200">Testimonios</a>
+      <a href="#contacto" class="hover:text-rosa-200">Contacto</a>
+      <a href="https://www.facebook.com/profile.php?id=100063504134357" target="_blank" class="hover:text-rosa-200 text-xl">📘</a>
+      <a href="https://www.instagram.com/billybondetalles/" target="_blank" class="hover:text-rosa-200 text-xl">📷</a>
+    </div>
+
+    <!-- Menú Móvil -->
+    <div id="mobile-menu" class="hidden fixed top-16 left-0 w-full bg-rosa-600 p-4 flex flex-col items-center space-y-4 sm:hidden">
+      <a href="#productos" class="hover:text-rosa-200">Productos</a>
+      <a href="#nosotros" class="hover:text-rosa-200">Nosotros</a>
+      <a href="#galeria" class="hover:text-rosa-200">Galería</a>
+      <a href="#testimonios" class="hover:text-rosa-200">Testimonios</a>
+      <a href="#contacto" class="hover:text-rosa-200">Contacto</a>
+      <div class="flex space-x-6">
+        <a href="https://www.facebook.com/profile.php?id=100063504134357" target="_blank" class="hover:text-rosa-200 text-2xl">📘</a>
+        <a href="https://www.instagram.com/billybondetalles/" target="_blank" class="hover:text-rosa-200 text-2xl">📷</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="relative text-center py-20">
+  <div class="flex flex-col items-center">
+    <img src="https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,w_300/v1740524420/e0fdac21_q0oh9e.png" alt="Logo Billybon Detalles" class="w-32 md:w-48 lg:w-56 rounded-full shadow-lg mb-4">
+
+    <h1 class="text-4xl font-extrabold text-white">Billybon Detalles</h1>
+    <p class="mt-4 text-lg text-white">Souvenirs Mágicos Hechos a Mano en Vancouver</p>
+
+    <a href="#contacto" class="bg-rosa-300 text-white px-8 py-3 rounded-full mt-6 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300">
+      Pide tu souvenir ahora
+    </a>
+  </div>
+</header>
+
+<section id="productos" class="py-20 text-center" data-aos="fade-up">
+  <h2 class="text-3xl font-bold text-rosa-600">Productos Destacados</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 max-w-6xl mx-auto px-6">
+    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 relative">
+      <img src="https://res.cloudinary.com/dvm4ql8eo/image/upload/c_crop,w_1551,h_1551,x_0,y_248,ar_1:1/v1740526947/468615350_1148282153966236_6230773621316529436_n_wh6jra.jpg" alt="Maqueta Personalizada en Frasco Billybon" loading="lazy" class="rounded-lg w-full h-64 object-cover object-center">
+      <span class="badge">Hecho a Mano</span>
+      <h3 class="text-xl font-bold mt-4 text-rosa-600">Maqueta Personalizada en Frasco</h3>
+      <p class="text-gray-600 text-sm mt-2">Diseño único, $20</p>
+      <button onclick="fillContactForm('Maqueta Personalizada en Frasco', 1)" class="bg-rosa-300 text-white px-5 py-2 rounded-full mt-4 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300">Personalizar</button>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 relative">
+      <img src="https://res.cloudinary.com/dvm4ql8eo/image/upload/c_crop,w_1551,h_1551,x_0,y_248,ar_1:1/v1740526947/468615350_1148282153966236_6230773621316529436_n_wh6jra.jpg" alt="Topper de Torta para Bodas Billybon" loading="lazy" class="rounded-lg w-full h-64 object-cover object-center">
+      <span class="badge">Personalizado 100%</span>
+      <h3 class="text-xl font-bold mt-4 text-rosa-600">Topper de Torta para Bodas</h3>
+      <p class="text-gray-600 text-sm mt-2">Personalizado, $30</p>
+      <button onclick="fillContactForm('Maqueta Personalizada en Frasco', 1)" class="bg-rosa-300 text-white px-5 py-2 rounded-full mt-4 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300">Personalizar</button>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 relative">
+      <img src="https://res.cloudinary.com/dvm4ql8eo/image/upload/c_crop,w_1551,h_1551,x_0,y_248,ar_1:1/v1740526947/468615350_1148282153966236_6230773621316529436_n_wh6jra.jpg" alt="Souvenir de Bautizo Billybon" loading="lazy" class="rounded-lg w-full h-64 object-cover object-center">
+      <span class="badge">Hecho a Mano</span>
+      <h3 class="text-xl font-bold mt-4 text-rosa-600">Souvenir de Bautizo</h3>
+      <p class="text-gray-600 text-sm mt-2">Hecho a mano, $15</p>
+      <button onclick="fillContactForm('Maqueta Personalizada en Frasco', 1)" class="bg-rosa-300 text-white px-5 py-2 rounded-full mt-4 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300">Personalizar</button>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 relative">
+      <img src="https://res.cloudinary.com/dvm4ql8eo/image/upload/c_crop,w_1551,h_1551,x_0,y_248,ar_1:1/v1740526947/468615350_1148282153966236_6230773621316529436_n_wh6jra.jpg" alt="Mini Figura Animal Billybon" loading="lazy" class="rounded-lg w-full h-64 object-cover object-center">
+      <span class="badge">Personalizado 100%</span>
+      <h3 class="text-xl font-bold mt-4 text-rosa-600">Mini Figura Animal</h3>
+      <p class="text-gray-600 text-sm mt-2">Diseño adorable, $12</p>
+      <button onclick="fillContactForm('Maqueta Personalizada en Frasco', 1)" class="bg-rosa-300 text-white px-5 py-2 rounded-full mt-4 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300">Personalizar</button>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 relative">
+      <img src="https://res.cloudinary.com/dvm4ql8eo/image/upload/c_crop,w_1551,h_1551,x_0,y_248,ar_1:1/v1740526947/468615350_1148282153966236_6230773621316529436_n_wh6jra.jpg" alt="Set de Regalo Billybon" loading="lazy" class="rounded-lg w-full h-64 object-cover object-center">
+      <span class="badge">Hecho a Mano</span>
+      <h3 class="text-xl font-bold mt-4 text-rosa-600">Set de Regalo</h3>
+      <p class="text-gray-600 text-sm mt-2">3 souvenirs, $40</p>
+      <button onclick="fillContactForm('Maqueta Personalizada en Frasco', 1)" class="bg-rosa-300 text-white px-5 py-2 rounded-full mt-4 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300">Personalizar</button>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 relative">
+      <img src="https://res.cloudinary.com/dvm4ql8eo/image/upload/c_crop,w_1551,h_1551,x_0,y_248,ar_1:1/v1740526947/468615350_1148282153966236_6230773621316529436_n_wh6jra.jpg" alt="Topper Infantil Billybon" loading="lazy" class="rounded-lg w-full h-64 object-cover object-center">
+      <span class="badge">Personalizado 100%</span>
+      <h3 class="text-xl font-bold mt-4 text-rosa-600">Topper Infantil</h3>
+      <p class="text-gray-600 text-sm mt-2">Personalizado, $25</p>
+      <button onclick="fillContactForm('Maqueta Personalizada en Frasco', 1)" class="bg-rosa-300 text-white px-5 py-2 rounded-full mt-4 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300">Personalizar</button>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros" class="py-20 text-center" data-aos="fade-up">
+  <h2 class="text-3xl font-bold text-rosa-600">Nosotros</h2>
+  <div class="max-w-4xl mx-auto px-6 mt-12">
+    <p class="text-lg text-gray-600">En Billybon Detalles, creamos souvenirs y maquetas personalizados que transforman tus eventos en momentos inolvidables. Con años de experiencia en Vancouver, combinamos arte, pasión y rapidez para ofrecer productos únicos hechos a mano, diseñados para bodas, cumpleaños, bautizos y más. Nos enorgullece apoyar a la comunidad local con envíos gratis en 24 horas.</p>
+  </div>
+  <button class="bg-rosa-300 text-white px-8 py-3 rounded-full mt-8 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300" data-aos="fade-up">Conócenos más</button>
+</section>
+
+<section id="galeria" class="py-20 bg-gray-50 text-center" data-aos="fade-up">
+  <h2 class="text-3xl font-bold text-rosa-600">Galería de Eventos</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 max-w-6xl mx-auto px-6">
+      <a href="https://www.facebook.com/profile.php?id=100063504134357&sk=photos_by&category_id=2305272732" target="_blank" class="bg-white p-6 rounded-xl shadow-md hover:scale-105 transition-all duration-300">
+        <img src="https://res.cloudinary.com/dvm4ql8eo/image/upload/c_crop,w_1638,h_1638,x_0,y_410,ar_1:1/v1740527615/366143849_797198965741225_108565122846558253_n_rttggs.jpg" alt="Maquetas para Bodas Billybon" loading="lazy" class="rounded-lg w-full h-64 object-cover object-center">
+        <p class="text-gray-600 text-sm mt-2">Bodas personalizadas</p>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100063504134357&sk=photos_by&category_id=2305272732" target="_blank" class="bg-white p-6 rounded-xl shadow-md hover:scale-105 transition-all duration-300">
+        <img src="https://res.cloudinary.com/dvm4ql8eo/image/upload/c_crop,w_1638,h_1638,x_0,y_410,ar_1:1/v1740527615/366143849_797198965741225_108565122846558253_n_rttggs.jpg" alt="Animales en Frascos Billybon" loading="lazy" class="rounded-lg w-full h-64 object-cover object-center">
+        <p class="text-gray-600 text-sm mt-2">Cumples infantiles</p>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100063504134357&sk=photos_by&category_id=2305272732" target="_blank" class="bg-white p-6 rounded-xl shadow-md hover:scale-105 transition-all duration-300">
+        <img src="https://res.cloudinary.com/dvm4ql8eo/image/upload/c_crop,w_1638,h_1638,x_0,y_410,ar_1:1/v1740527615/366143849_797198965741225_108565122846558253_n_rttggs.jpg" alt="Souvenirs Empaquetados Billybon" loading="lazy" class="rounded-lg w-full h-64 object-cover object-center">
+        <p class="text-gray-600 text-sm mt-2">Bautizos y eventos</p>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100063504134357&sk=photos_by&category_id=2305272732" target="_blank" class="bg-white p-6 rounded-xl shadow-md hover:scale-105 transition-all duration-300">
+        <img src="https://res.cloudinary.com/dvm4ql8eo/image/upload/c_crop,w_1638,h_1638,x_0,y_410,ar_1:1/v1740527615/366143849_797198965741225_108565122846558253_n_rttggs.jpg" alt="Toppers para Cumples Billybon" loading="lazy" class="rounded-lg w-full h-64 object-cover object-center">
+        <p class="text-gray-600 text-sm mt-2">Cumpleaños temáticos</p>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100063504134357&sk=photos_by&category_id=2305272732" target="_blank" class="bg-white p-6 rounded-xl shadow-md hover:scale-105 transition-all duration-300">
+        <img src="https://res.cloudinary.com/dvm4ql8eo/image/upload/c_crop,w_1638,h_1638,x_0,y_410,ar_1:1/v1740527615/366143849_797198965741225_108565122846558253_n_rttggs.jpg" alt="Maquetas para Bautizos Billybon" loading="lazy" class="rounded-lg w-full h-64 object-cover object-center">
+        <p class="text-gray-600 text-sm mt-2">Bautizos personalizados</p>
+      </a>
+    </div>
+  <button class="bg-rosa-300 text-white px-8 py-3 rounded-full mt-12 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300" data-aos="fade-up">Ver más proyectos</button>
+</section>
+
+<section id="testimonios" class="py-20 bg-gray-50 text-center" data-aos="fade-up">
+  <h2 class="text-3xl font-bold text-rosa-600">Lo que dicen nuestros clientes</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 max-w-5xl mx-auto px-6">
+
+    <div class="bg-rosa-200 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300" data-aos="fade-up">
+      <p class="text-gray-600 italic text-lg">“¡Mis souvenirs para la boda fueron perfectos y llegaron a tiempo!”</p>
+      <p class="mt-4 font-bold text-rosa-50">– Ana, Vancouver 👰</p>
+    </div>
+
+    <div class="bg-rosa-200 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+      <p class="text-gray-600 italic text-lg">“Los toppers infantiles hicieron inolvidable el cumple de mi hijo.”</p>
+      <p class="mt-4 font-bold text-rosa-50">– Carlos, Vancouver 🎉</p>
+    </div>
+
+    <div class="bg-rosa-200 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+      <p class="text-gray-600 italic text-lg">“La personalización fue increíble, y el envío fue rapidísimo.”</p>
+      <p class="mt-4 font-bold text-rosa-50">– Laura, Vancouver 💌</p>
+    </div>
+
+    <div class="bg-rosa-200 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
+      <p class="text-gray-600 italic text-lg">“Los souvenirs para el bautizo superaron mis expectativas.”</p>
+      <p class="mt-4 font-bold text-rosa-50">– María, Vancouver 👶</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="contacto" class="py-20 text-center" data-aos="fade-up">
+  <h2 class="text-3xl font-bold text-rosa-600">Personaliza tu Souvenir Hoy</h2>
+  <form name="artesanal-contact" method="POST" data-netlify="true" class="mt-12 max-w-lg mx-auto px-6">
+    <input type="hidden" name="form-name" value="artesanal-contact">
+    <div class="relative mb-4">
+      <input type="text" name="name" placeholder="Tu nombre" required class="w-full p-4 rounded-lg border border-rosa-50 focus:outline-none focus:ring-2 focus:ring-rosa-300 transition-all duration-300" data-aos="fade-up">
+    </div>
+    <div class="relative mb-4">
+      <input type="email" name="email" placeholder="Tu email" required class="w-full p-4 rounded-lg border border-rosa-50 focus:outline-none focus:ring-2 focus:ring-rosa-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+    </div>
+    <div class="relative mb-4">
+      <input type="text" name="event" placeholder="Evento/Tipo de souvenir" required class="w-full p-4 rounded-lg border border-rosa-50 focus:outline-none focus:ring-2 focus:ring-rosa-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+    </div>
+    <div class="relative mb-4">
+      <textarea name="description" placeholder="Comentarios o descripción" rows="4" class="w-full p-4 rounded-lg border border-rosa-50 focus:outline-none focus:ring-2 focus:ring-rosa-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="250"></textarea>
+    </div>
+    <button type="submit" class="bg-rosa-300 text-white px-8 py-3 rounded-full mt-6 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="300">Enviar</button>
+  </form>
+  <p class="mt-6 text-lg">O escríbeme: <a href="https://wa.me/+593991786353?text=Hola%20Billybon%20Detalles,%20quiero%20personalizar%20un%20souvenir." class="text-rosa-300 hover:text-rosa-200 underline font-medium" target="_blank" data-aos="fade-up" data-aos-delay="400">WhatsApp</a></p>
+</section>
+
+<!-- Botón WhatsApp Flotante -->
+<a href="https://wa.me/16041234567?text=Hola%20Vancouver%20Landings,%20quiero%20personalizar%20un%20souvenir." class="fixed bottom-5 right-5 bg-rosa-300 text-white p-4 rounded-full shadow-lg hover:bg-rosa-200 hover:shadow-xl transition-all duration-300" target="_blank">
+  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12.003 2.001c-5.523 0-10 4.477-10 10 0 2.136.699 4.155 1.88 5.79l-1.246 4.62 4.744-1.234A9.937 9.937 0 0012.003 22c5.523 0 10-4.477 10-10s-4.477-10-10-10zm4.784 13.456c-.195-.195-.46-.298-.727-.298-.267 0-.53.103-.725.298l-1.468 1.468c-1.146-1.146-2.347-2.073-3.586-2.794-.312-.183-.687-.183-1 0-1.24.721-2.44 1.648-3.585 2.794l-1.468-1.468c-.195-.195-.458-.298-.725-.298-.267 0-.531.103-.726.298-.39.39-.39 1.024 0 1.414l1.467 1.467c1.212 1.212 2.514 2.189 3.861 2.929.333.183.708.183 1.041 0 1.346-.74 2.649-1.717 3.86-2.929l1.468-1.467c.195-.195.195-.819 0-1.014z"/>
+  </svg>
+</a>
+
+<footer class="bg-rosa-600 text-white py-8 text-center">
+  <p class="text-lg">© 2025 Vancouver Landings | Souvenirs que hacen únicos tus eventos</p>
+  <div class="mt-4">
+    <a href="#productos" class="text-rosa-50 hover:underline mx-2 font-medium">Productos</a> |
+    <a href="#nosotros" class="text-rosa-50 hover:underline mx-2 font-medium">Nosotros</a> |
+    <a href="#galeria" class="text-rosa-50 hover:underline mx-2 font-medium">Galería</a> |
+    <a href="#testimonios" class="text-rosa-50 hover:underline mx-2 font-medium">Testimonios</a> |
+    <a href="#contacto" class="text-rosa-50 hover:underline mx-2 font-medium">Contacto</a>
+  </div>
+  <a href="https://vancouver-landings.netlify.app" class="text-rosa-100 hover:underline mt-2 block font-medium">Volver a la página principal</a>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 300,
+    once: true
+  });
+
+  // Menú Sticky con logo dinámico
+  const navbar = document.getElementById('navbar');
+  const navbarLogo = document.getElementById('navbar-logo');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+      navbarLogo.classList.remove('hidden');
+    } else {
+      navbar.classList.remove('scrolled');
+      navbarLogo.classList.add('hidden');
+    }
+  });
+
+  // Menú Móvil
+  //const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  //menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  function fillContactForm(productName, quantity) {
+    window.location.hash = '#contacto';
+    const eventField = document.querySelector('input[name="event"]');
+    eventField.value = `${productName} - Cantidad: ${quantity}`;
+  }
+</script>
+</body>
+</html>
