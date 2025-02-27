@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Souvenirs personalizados y maquetas únicas en Ecuador, envíos gratis en 24h">
-  <meta name="keywords" content="souvenirs Ecuador, maquetas personalizadas, toppers eventos">
-  <title>Billybon Detalles | Vancouver Landings</title>
+  <meta name="description" content="%DESCRIPCION_EMPRESA%">
+  <meta name="keywords" content="%KEYWORDS_EMPRESA%">
+  <title>%NOMBRE_EMPRESA% | %TITULO_LANDING%</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body { font-family: 'Poppins', sans-serif; }
     header {
-      background-image: linear-gradient(to bottom, rgba(255, 64, 129, 0.7), rgba(255, 204, 203, 0.3)), url('https://res.cloudinary.com/dvm4ql8eo/image/upload/v1740535264/Pastel_Rainbow_Modern_January_Monthly_Email_Header_slgfbg.jpg');
+      background-image: linear-gradient(to bottom, rgba(255, 64, 129, 0.7), rgba(255, 204, 203, 0.3)), url('%URL_HEADER_IMAGE%');
       background-size: cover;
       background-position: center;
     }
@@ -97,7 +97,6 @@
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
-    /* Estilo para el ícono de Instagram */
     .instagram-link {
       position: absolute;
       bottom: 10px;
@@ -113,17 +112,32 @@
     .instagram-link:hover {
       background-color: #FF99B4;
     }
+    /* Estilo para el mensaje de confirmación */
+    #form-success {
+      display: none;
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #FF6699;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      text-align: center;
+    }
   </style>
 </head>
 <body class="bg-gray-50">
-<!-- Menú Sticky (Navbar Fijo) -->
+<!-- Navbar -->
 <nav id="navbar" class="fixed top-0 left-0 w-full bg-transparent text-white py-2 z-50 transition-all duration-300">
   <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
     <div class="flex items-center space-x-4">
       <div id="navbar-logo" class="hidden">
-        <img src="https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,w_300/v1740524420/e0fdac21_q0oh9e.png" alt="Logo de Billybon Detalles" class="w-12 h-12 object-contain rounded-full">
+        <img src="%URL_LOGO_EMPRESA%" alt="Logo de %NOMBRE_EMPRESA%" class="w-12 h-12 object-contain rounded-full">
       </div>
-      <h1 class="text-2xl font-bold">Billybon Detalles</h1>
+      <h1 class="text-2xl font-bold">%NOMBRE_EMPRESA%</h1>
     </div>
     <div class="flex sm:hidden">
       <button id="menu-toggle" class="focus:outline-none">
@@ -138,8 +152,8 @@
       <a href="#galeria" class="hover:text-rosa-200">Galería</a>
       <a href="#testimonios" class="hover:text-rosa-200">Testimonios</a>
       <a href="#contacto" class="hover:text-rosa-200">Contacto</a>
-      <a href="https://www.facebook.com/profile.php?id=100063504134357" target="_blank" class="hover:text-rosa-200 text-xl">📘</a>
-      <a href="https://www.instagram.com/billybondetalles/" target="_blank" class="hover:text-rosa-200 text-xl">📷</a>
+      <a href="%URL_FACEBOOK%" target="_blank" class="hover:text-rosa-200 text-xl">📘</a>
+      <a href="%URL_INSTAGRAM%" target="_blank" class="hover:text-rosa-200 text-xl">📷</a>
     </div>
     <div id="mobile-menu" class="hidden fixed top-16 left-0 w-full bg-rosa-600 p-4 flex flex-col items-center space-y-4 sm:hidden">
       <a href="#productos" class="hover:text-rosa-200">Productos</a>
@@ -148,66 +162,56 @@
       <a href="#testimonios" class="hover:text-rosa-200">Testimonios</a>
       <a href="#contacto" class="hover:text-rosa-200">Contacto</a>
       <div class="flex space-x-6">
-        <a href="https://www.facebook.com/profile.php?id=100063504134357" target="_blank" class="hover:text-rosa-200 text-2xl">📘</a>
-        <a href="https://www.instagram.com/billybondetalles/" target="_blank" class="hover:text-rosa-200 text-2xl">📷</a>
+        <a href="%URL_FACEBOOK%" target="_blank" class="hover:text-rosa-200 text-2xl">📘</a>
+        <a href="%URL_INSTAGRAM%" target="_blank" class="hover:text-rosa-200 text-2xl">📷</a>
       </div>
     </div>
   </div>
 </nav>
 
+<!-- Header -->
 <header class="relative text-center py-20">
   <div class="flex flex-col items-center">
-    <img src="https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,w_300/v1740524420/e0fdac21_q0oh9e.png" alt="Logo de Billybon Detalles Ecuador" class="w-32 md:w-48 lg:w-56 rounded-full shadow-lg mb-4">
-    <h1 class="text-4xl font-extrabold text-white">Billybon Detalles</h1>
-    <p class="mt-4 text-lg text-white">Souvenirs Mágicos Hechos a Mano en Ecuador</p>
-    <a href="#contacto" class="bg-rosa-300 text-white px-8 py-3 rounded-full mt-6 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300">Pide tu souvenir ahora</a>
+    <img src="%URL_LOGO_EMPRESA%" alt="Logo de %NOMBRE_EMPRESA%" class="w-32 md:w-48 lg:w-56 rounded-full shadow-lg mb-4">
+    <h1 class="text-4xl font-extrabold text-white">%NOMBRE_EMPRESA%</h1>
+    <p class="mt-4 text-lg text-white">%ESLOGAN_EMPRESA%</p>
+    <a href="#contacto" class="bg-rosa-300 text-white px-8 py-3 rounded-full mt-6 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300">Pide tu producto ahora</a>
   </div>
 </header>
 
+<!-- Productos -->
 <section id="productos" class="py-20 text-center" data-aos="fade-up">
   <h2 class="text-3xl font-bold text-rosa-600">Productos Destacados</h2>
   <div id="productos-container" class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 max-w-6xl mx-auto px-6"></div>
+  <button id="ver-mas-productos" class="bg-rosa-300 text-white px-8 py-3 rounded-full mt-12 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300 hidden">Ver Más</button>
 </section>
 
+<!-- Nosotros -->
 <section id="nosotros" class="py-20 text-center" data-aos="fade-up">
   <h2 class="text-3xl font-bold text-rosa-600">Nosotros</h2>
   <div class="max-w-4xl mx-auto px-6 mt-12">
-    <p class="text-lg text-gray-600">En Billybon Detalles, creamos souvenirs y maquetas personalizados que transforman tus eventos en momentos inolvidables. Con años de experiencia en Ecuador, combinamos arte, pasión y rapidez para ofrecer productos únicos hechos a mano, diseñados para bodas, cumpleaños, bautizos y más. Nos enorgullece apoyar a la comunidad local con envíos gratis en 24 horas.</p>
+    <p class="text-lg text-gray-600">%DESCRIPCION_NOSOTROS%</p>
   </div>
   <button class="bg-rosa-300 text-white px-8 py-3 rounded-full mt-8 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300" data-aos="fade-up">Conócenos más</button>
 </section>
 
+<!-- Galería -->
 <section id="galeria" class="py-20 bg-gray-50 text-center" data-aos="fade-up">
   <h2 class="text-3xl font-bold text-rosa-600">Galería de Eventos</h2>
   <div id="galeria-container" class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 max-w-6xl mx-auto px-6"></div>
   <button class="bg-rosa-300 text-white px-8 py-3 rounded-full mt-12 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300" data-aos="fade-up">Ver más proyectos</button>
 </section>
 
+<!-- Testimonios -->
 <section id="testimonios" class="py-20 bg-gray-50 text-center" data-aos="fade-up">
   <h2 class="text-3xl font-bold text-rosa-600">Lo que dicen nuestros clientes</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 max-w-5xl mx-auto px-6">
-    <div class="bg-rosa-200 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300" data-aos="fade-up">
-      <p class="text-gray-600 italic text-lg">“¡Mis souvenirs para la boda fueron perfectos y llegaron a tiempo!”</p>
-      <p class="mt-4 font-bold text-rosa-50">– Ana, Quito 👰</p>
-    </div>
-    <div class="bg-rosa-200 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-      <p class="text-gray-600 italic text-lg">“Los toppers infantiles hicieron inolvidable el cumple de mi hijo.”</p>
-      <p class="mt-4 font-bold text-rosa-50">– Carlos, Guayaquil</p>
-    </div>
-    <div class="bg-rosa-200 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
-      <p class="text-gray-600 italic text-lg">“La personalización fue increíble, y el envío fue rapidísimo.”</p>
-      <p class="mt-4 font-bold text-rosa-50">– Laura, Quito 💌</p>
-    </div>
-    <div class="bg-rosa-200 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
-      <p class="text-gray-600 italic text-lg">“Los souvenirs para el bautizo superaron mis expectativas.”</p>
-      <p class="mt-4 font-bold text-rosa-50">– María, Quito 👶</p>
-    </div>
-  </div>
+  <div id="testimonios-container" class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 max-w-5xl mx-auto px-6"></div>
 </section>
 
+<!-- Contacto -->
 <section id="contacto" class="py-20 text-center" data-aos="fade-up">
-  <h2 class="text-3xl font-bold text-rosa-600">Personaliza tu Souvenir Hoy</h2>
-  <form name="artesanal-contact" method="POST" data-netlify="true" class="mt-12 max-w-lg mx-auto px-6">
+  <h2 class="text-3xl font-bold text-rosa-600">Personaliza tu Producto Hoy</h2>
+  <form id="contact-form" name="artesanal-contact" method="POST" data-netlify="true" class="mt-12 max-w-lg mx-auto px-6">
     <input type="hidden" name="form-name" value="artesanal-contact">
     <div class="relative mb-4">
       <input type="text" name="name" placeholder="Tu nombre" required class="w-full p-4 rounded-lg border border-rosa-50 focus:outline-none focus:ring-2 focus:ring-rosa-300 transition-all duration-300" data-aos="fade-up">
@@ -216,18 +220,21 @@
       <input type="email" name="email" placeholder="Tu email" required class="w-full p-4 rounded-lg border border-rosa-50 focus:outline-none focus:ring-2 focus:ring-rosa-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
     </div>
     <div class="relative mb-4">
-      <input type="text" name="event" placeholder="Evento/Tipo de souvenir" required class="w-full p-4 rounded-lg border border-rosa-50 focus:outline-none focus:ring-2 focus:ring-rosa-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+      <input type="text" name="event" placeholder="Evento/Tipo de producto" required class="w-full p-4 rounded-lg border border-rosa-50 focus:outline-none focus:ring-2 focus:ring-rosa-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
     </div>
     <div class="relative mb-4">
       <textarea name="description" placeholder="Comentarios o descripción" rows="4" class="w-full p-4 rounded-lg border border-rosa-50 focus:outline-none focus:ring-2 focus:ring-rosa-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="250"></textarea>
     </div>
     <button type="submit" class="bg-rosa-300 text-white px-8 py-3 rounded-full mt-6 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="300">Enviar</button>
   </form>
-  <p class="mt-6 text-lg">O escríbeme: <a href="https://wa.me/+593987480735?text=Hola%20Billybon%20Detalles,%20quiero%20personalizar%20un%20souvenir." class="text-rosa-300 hover:text-rosa-200 underline font-medium" target="_blank" data-aos="fade-up" data-aos-delay="400">WhatsApp</a></p>
+  <div id="form-success" class="hidden">
+    <p>¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.</p>
+  </div>
+  <p class="mt-6 text-lg">O contáctanos: <a href="%URL_WHATSAPP%" class="text-rosa-300 hover:text-rosa-200 underline font-medium" target="_blank" data-aos="fade-up" data-aos-delay="400">WhatsApp</a></p>
 </section>
 
 <!-- Botón WhatsApp Flotante -->
-<a href="https://wa.me/+593987480735?text=Hola%Billybon%20Detalles,%20quiero%20personalizar%20un%20souvenir." class="fixed bottom-5 right-5 bg-rosa-300 text-white p-4 rounded-full shadow-lg hover:bg-rosa-200 hover:shadow-xl transition-all duration-300" target="_blank">
+<a href="%URL_WHATSAPP%" class="fixed bottom-5 right-5 bg-rosa-300 text-white p-4 rounded-full shadow-lg hover:bg-rosa-200 hover:shadow-xl transition-all duration-300" target="_blank">
   <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
     <path d="M12.003 2.001c-5.523 0-10 4.477-10 10 0 2.136.699 4.155 1.88 5.79l-1.246 4.62 4.744-1.234A9.937 9.937 0 0012.003 22c5.523 0 10-4.477 10-10s-4.477-10-10-10zm4.784 13.456c-.195-.195-.46-.298-.727-.298-.267 0-.53.103-.725.298l-1.468 1.468c-1.146-1.146-2.347-2.073-3.586-2.794-.312-.183-.687-.183-1 0-1.24.721-2.44 1.648-3.585 2.794l-1.468-1.468c-.195-.195-.458-.298-.725-.298-.267 0-.531.103-.726.298-.39.39-.39 1.024 0 1.414l1.467 1.467c1.212 1.212 2.514 2.189 3.861 2.929.333.183.708.183 1.041 0 1.346-.74 2.649-1.717 3.86-2.929l1.468-1.467c.195-.195.195-.819 0-1.014z"/>
   </svg>
@@ -241,8 +248,9 @@
   <img src="" alt="Imagen ampliada">
 </div>
 
+<!-- Footer -->
 <footer class="bg-rosa-600 text-white py-8 text-center">
-  <p class="text-lg">© 2025 Vancouver Landings | Souvenirs que hacen únicos tus eventos</p>
+  <p class="text-lg">© 2025 %NOMBRE_EMPRESA% | %ESLOGAN_FOOTER%</p>
   <div class="mt-4">
     <a href="#productos" class="text-rosa-50 hover:underline mx-2 font-medium">Productos</a> |
     <a href="#nosotros" class="text-rosa-50 hover:underline mx-2 font-medium">Nosotros</a> |
@@ -250,107 +258,102 @@
     <a href="#testimonios" class="text-rosa-50 hover:underline mx-2 font-medium">Testimonios</a> |
     <a href="#contacto" class="text-rosa-50 hover:underline mx-2 font-medium">Contacto</a>
   </div>
-  <a href="https://vancouver-landings.netlify.app" class="text-rosa-100 hover:underline mt-2 block font-medium">Volver a la página principal</a>
+  <a href="%URL_MAIN_PAGE%" class="text-rosa-100 hover:underline mt-2 block font-medium">Volver a la página principal</a>
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init({
-    duration: 300,
-    once: true
-  });
+  AOS.init({ duration: 300, once: true });
 
-  // Arreglo de productos
-  const productos = [
-    {
-      imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,b_gen_fill,w_400,h_400,ar_1:1/v1740581885/WhatsApp_Image_2025-02-25_at_19.28.29_mt11yt.jpg", // Placeholder, cámbialo por la imagen real
-      nombre: "Topper para Grado",
-      descripcion: "Topper de 15 a 20 cm de alto hecho a mano con ojitos 3D personalizado",
-      precio: 25, // Precio ficticio, ajústalo
-      badge: "Personalizado 100%"
+  // Configuración inicial
+  const config = {
+    empresa: {
+      nombre: "Billybon Detalles",
+      ubicacion: "Ecuador",
+      eslogan: "Souvenirs Mágicos Hechos a Mano en Ecuador",
+      descripcion: "Souvenirs personalizados y maquetas únicas en Ecuador, envíos gratis en 24h",
+      keywords: "souvenirs Ecuador, maquetas personalizadas, toppers eventos",
+      logo: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,w_300/v1740524420/e0fdac21_q0oh9e.png",
+      headerImage: "https://res.cloudinary.com/dvm4ql8eo/image/upload/v1740535264/Pastel_Rainbow_Modern_January_Monthly_Email_Header_slgfbg.jpg",
+      facebook: "https://www.facebook.com/profile.php?id=100063504134357",
+      instagram: "https://www.instagram.com/billybondetalles/",
+      whatsapp: "https://wa.me/+593987480735?text=Hola%20Billybon%20Detalles,%20quiero%20personalizar%20un%20souvenir",
+      mainPage: "https://vancouver-landings.netlify.app",
+      nosotros: "En Billybon Detalles, creamos souvenirs y maquetas personalizados que transforman tus eventos en momentos inolvidables. Con años de experiencia en Ecuador, combinamos arte, pasión y rapidez para ofrecer productos únicos hechos a mano, diseñados para bodas, cumpleaños, bautizos y más. Nos enorgullece apoyar a la comunidad local con envíos gratis en 24 horas.",
+      footerSlogan: "Souvenirs que hacen únicos tus eventos"
     },
-    {
-      imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1/v1740581884/WhatsApp_Image_2025-02-25_at_19.28.30_ckcyjq.jpg", // Placeholder, cámbialo por la imagen real
-      nombre: "Souvenir para Bautizo o Baby Shower",
-      descripcion: "Muñequita hecha a mano con ojitos 3D, vestido de colores, 6 cm de alto",
-      precio: 15, // Precio ficticio, ajústalo
-      badge: "Hecho a Mano"
-    },
-    {
-      imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,w_400,h_400,ar_1:1/v1740581885/WhatsApp_Image_2025-02-25_at_19.28.30_1_o9h6f2.jpg", // Placeholder, cámbialo por la imagen real
-      nombre: "Regalos Personalizados Navideños",
-      descripcion: "Caja de 6 bombillos navideños con hilo dorado o imán para la nevera, 6 cm",
-      precio: 35, // Precio ficticio, ajústalo
-      badge: "Personalizado 100%"
-    },
-    {
-      imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1/v1740581884/WhatsApp_Image_2025-02-25_at_19.28.30_2_ahtc11.jpg", // Placeholder, cámbialo por la imagen real
-      nombre: "Letras de Resina Epóxica",
-      descripcion: "Llaveros personalizados de letras A-Z, colores y diseños con significado del nombre",
-      precio: 12, // Precio ficticio, ajústalo
-      badge: "Personalizado 100%"
-    },
-    {
-      imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1,g_auto/v1740581884/WhatsApp_Image_2025-02-25_at_19.28.30_3_pi3rjg.jpg", // Placeholder, cámbialo por la imagen real
-      nombre: "Topper de Novios",
-      descripcion: "Novios personalizados con ojitos 3D, base acrílica, 15 a 20 cm de alto",
-      precio: 30, // Precio ficticio, ajústalo
-      badge: "Personalizado 100%"
-    },
-    {
-      imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,b_gen_fill,w_400,h_400,ar_1:1/v1740581884/WhatsApp_Image_2025-02-25_at_20.06.39_ip4fdw.jpg", // Placeholder, cámbialo por la imagen real
-      nombre: "Velas con aroma",
-      descripcion: "Velas con frascos personalizado colores y fragancia",
-      precio: 30, // Precio ficticio, ajústalo
-      badge: "Hecho a Mano"
-    }
-  ];
+    productos: [
+      { imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,b_gen_fill,w_400,h_400,ar_1:1/v1740581885/WhatsApp_Image_2025-02-25_at_19.28.29_mt11yt.jpg", nombre: "Topper para Grado", descripcion: "Topper de 15 a 20 cm de alto hecho a mano con ojitos 3D personalizado", precio: 25, badge: "Personalizado 100%", stock: true },
+      { imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1/v1740581884/WhatsApp_Image_2025-02-25_at_19.28.30_ckcyjq.jpg", nombre: "Souvenir para Bautizo o Baby Shower", descripcion: "Muñequita hecha a mano con ojitos 3D, vestido de colores, 6 cm de alto", precio: 15, badge: "Hecho a Mano", stock: true },
+      { imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,w_400,h_400,ar_1:1/v1740581885/WhatsApp_Image_2025-02-25_at_19.28.30_1_o9h6f2.jpg", nombre: "Regalos Personalizados Navideños", descripcion: "Caja de 6 bombillos navideños con hilo dorado o imán para la nevera, 6 cm", precio: 35, badge: "Personalizado 100%", stock: true },
+      { imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1/v1740581884/WhatsApp_Image_2025-02-25_at_19.28.30_2_ahtc11.jpg", nombre: "Letras de Resina Epóxica", descripcion: "Llaveros personalizados de letras A-Z, colores y diseños con significado del nombre", precio: 12, badge: "Personalizado 100%", stock: true },
+      { imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1,g_auto/v1740581884/WhatsApp_Image_2025-02-25_at_19.28.30_3_pi3rjg.jpg", nombre: "Topper de Novios", descripcion: "Novios personalizados con ojitos 3D, base acrílica, 15 a 20 cm de alto", precio: 30, badge: "Personalizado 100%", stock: true },
+      { imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,b_gen_fill,w_400,h_400,ar_1:1/v1740581884/WhatsApp_Image_2025-02-25_at_20.06.39_ip4fdw.jpg", nombre: "Velas con aroma", descripcion: "Velas con frascos personalizado colores y fragancia", precio: 30, badge: "Hecho a Mano", stock: true },
+      { imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,w_400,h_400,ar_1:1/v1740581885/WhatsApp_Image_2025-02-25_at_19.28.30_1_o9h6f2.jpg", nombre: "Producto Extra 1", descripcion: "Descripción de ejemplo", precio: 20, badge: "Hecho a Mano", stock: true }
+    ],
+    galeria: [
+      { imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1/v1740625815/b455dcb4-4b1b-4c96-b65b-1e22bf7b1caf_m0vidl.jpg", descripcion: "Bodas personalizadas", enlace: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTcwMjEwMDIyODc2Njg3?story_media_id=2521957682274088239_1270379838&igsh=ZHo4aHJrempxYzAy" },
+      { imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1/v1740625816/44610b1f-cec6-46bc-ad4b-5ea0d47d870d_bfwucu.jpg", descripcion: "Bautizos y eventos", enlace: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODgwNDA0NTg3ODIwODMz?story_media_id=2409663449264367629_1270379838&igsh=MXBhcHozYmRndmhu" },
+      { imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1/v1740625816/63868376-b268-4068-8e1b-a0a7a4315476_nruamc.jpg", descripcion: "Regalos Personalizados", enlace: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDE3NDE3NTI4NjkxMDc0?story_media_id=3367446618859240636_1270379838&igsh=MWVoNnp2Y2k1cm9pOA==" },
+      { imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,b_gen_fill,w_400,h_400,ar_1:1/v1740625815/31444523-2164-4efa-abaa-479c7c3a4464_aaoubr.jpg", descripcion: "Llaveros temáticos", enlace: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDM4MTAyNDYyMTgyMTc1?story_media_id=3062774449263649452_1270379838&igsh=NWM5dDBkZGhodzR4" }
+    ],
+    testimonios: [
+      { texto: "¡Mis souvenirs para la boda fueron perfectos y llegaron a tiempo!", autor: "Ana, Quito 👰" },
+      { texto: "Los toppers infantiles hicieron inolvidable el cumple de mi hijo.", autor: "Carlos, Guayaquil" },
+      { texto: "La personalización fue increíble, y el envío fue rapidísimo.", autor: "Laura, Quito 💌" },
+      { texto: "Los souvenirs para el bautizo superaron mis expectativas.", autor: "María, Quito 👶" }
+    ]
+  };
 
-  // Generar productos dinámicamente con lightbox
+  // Reemplazar placeholders
+  document.title = `${config.empresa.nombre} | %TITULO_LANDING%`;
+  document.querySelector('meta[name="description"]').content = config.empresa.descripcion;
+  document.querySelector('meta[name="keywords"]').content = config.empresa.keywords;
+  document.querySelectorAll('h1').forEach(h1 => h1.textContent = config.empresa.nombre);
+  document.querySelector('header p').textContent = config.empresa.eslogan;
+  document.querySelector('#nosotros p').textContent = config.empresa.nosotros;
+  document.querySelector('footer p').textContent = `© 2025 ${config.empresa.nombre} | ${config.empresa.footerSlogan}`;
+  document.querySelectorAll('img[src="%URL_LOGO_EMPRESA%"]').forEach(img => img.src = config.empresa.logo);
+  document.querySelector('header').style.backgroundImage = `linear-gradient(to bottom, rgba(255, 64, 129, 0.7), rgba(255, 204, 203, 0.3)), url('${config.empresa.headerImage}')`;
+  document.querySelectorAll('a[href="%URL_FACEBOOK%"]').forEach(a => a.href = config.empresa.facebook);
+  document.querySelectorAll('a[href="%URL_INSTAGRAM%"]').forEach(a => a.href = config.empresa.instagram);
+  document.querySelectorAll('a[href="%URL_WHATSAPP%"]').forEach(a => a.href = config.empresa.whatsapp);
+  document.querySelector('a[href="%URL_MAIN_PAGE%"]').href = config.empresa.mainPage;
+
+  // Generar productos (solo 6 al inicio)
   const productosContainer = document.getElementById('productos-container');
-  productos.forEach(producto => {
-    const productoHTML = `
-        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 relative">
-          <img src="${producto.imagen}" alt="${producto.nombre} - ${producto.descripcion}" loading="lazy" class="rounded-lg w-full h-64 object-cover object-center cursor-pointer" data-image="${producto.imagen}">
-          <span class="badge">${producto.badge}</span>
-          <h3 class="text-xl font-bold mt-4 text-rosa-600">${producto.nombre}</h3>
-          <p class="text-gray-600 text-sm mt-2">${producto.descripcion}, $${producto.precio}</p>
-          <button onclick="fillContactForm('${producto.nombre}')" class="bg-rosa-300 text-white px-5 py-2 rounded-full mt-4 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300">Personalizar</button>
-        </div>
-      `;
-    productosContainer.innerHTML += productoHTML;
+  const verMasProductosBtn = document.getElementById('ver-mas-productos');
+  let productosMostrados = 6;
+
+  function renderProductos(cantidad) {
+    productosContainer.innerHTML = '';
+    config.productos.slice(0, cantidad).forEach(producto => {
+      const productoHTML = `
+          <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 relative">
+            <img src="${producto.imagen}" alt="${producto.nombre} - ${producto.descripcion}" loading="lazy" class="rounded-lg w-full h-64 object-cover object-center cursor-pointer" data-image="${producto.imagen}">
+            <span class="badge">${producto.badge}</span>
+            <h3 class="text-xl font-bold mt-4 text-rosa-600">${producto.nombre}</h3>
+            <p class="text-gray-600 text-sm mt-2">${producto.descripcion}, $${producto.precio}</p>
+            <button onclick="fillContactForm('${producto.nombre}')" class="bg-rosa-300 text-white px-5 py-2 rounded-full mt-4 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300">${producto.stock ? "Personalizar" : "Agotado"}</button>
+          </div>
+        `;
+      productosContainer.innerHTML += productoHTML;
+    });
+    verMasProductosBtn.classList.toggle('hidden', config.productos.length <= productosMostrados);
+  }
+
+  renderProductos(productosMostrados);
+  verMasProductosBtn.addEventListener('click', () => {
+    productosMostrados = config.productos.length;
+    renderProductos(productosMostrados);
   });
 
-  // Arreglo de galería
-  const galeria = [
-    {
-      imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1/v1740625815/b455dcb4-4b1b-4c96-b65b-1e22bf7b1caf_m0vidl.jpg", // Placeholder, reemplaza con la imagen real
-      descripcion: "Bodas personalizadas",
-      enlace: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTcwMjEwMDIyODc2Njg3?story_media_id=2521957682274088239_1270379838&igsh=ZHo4aHJrempxYzAy"
-    },
-    {
-      imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1/v1740625816/44610b1f-cec6-46bc-ad4b-5ea0d47d870d_bfwucu.jpg", // Placeholder, reemplaza con la imagen real
-      descripcion: "Bautizos y eventos",
-      enlace: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODgwNDA0NTg3ODIwODMz?story_media_id=2409663449264367629_1270379838&igsh=MXBhcHozYmRndmhu"
-    },
-    {
-      imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1/v1740625816/63868376-b268-4068-8e1b-a0a7a4315476_nruamc.jpg", // Placeholder, reemplaza con la imagen real
-      descripcion: "Regalos Personalizados",
-      enlace: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDE3NDE3NTI4NjkxMDc0?story_media_id=3367446618859240636_1270379838&igsh=MWVoNnp2Y2k1cm9pOA=="
-    },
-    {
-      imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,b_gen_fill,w_400,h_400,ar_1:1/v1740625815/31444523-2164-4efa-abaa-479c7c3a4464_aaoubr.jpg", // Placeholder, reemplaza con la imagen real
-      descripcion: "Llaveros temáticos",
-      enlace: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDM4MTAyNDYyMTgyMTc1?story_media_id=3062774449263649452_1270379838&igsh=NWM5dDBkZGhodzR4"
-    }
-  ];
-
-  // Generar galería dinámicamente con lightbox y enlace a Instagram
+  // Generar galería
   const galeriaContainer = document.getElementById('galeria-container');
-  galeria.forEach(item => {
+  config.galeria.forEach(item => {
     const galeriaHTML = `
         <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 relative">
-          <img src="${item.imagen}" alt="Ejemplo de ${item.descripcion} por Billybon Detalles" loading="lazy" class="rounded-lg w-full h-64 object-cover object-center cursor-pointer" data-image="${item.imagen}">
+          <img src="${item.imagen}" alt="Ejemplo de ${item.descripcion} por ${config.empresa.nombre}" loading="lazy" class="rounded-lg w-full h-64 object-cover object-center cursor-pointer" data-image="${item.imagen}">
           <a href="${item.enlace}" target="_blank" class="instagram-link">📷</a>
           <p class="text-gray-600 text-sm mt-2">${item.descripcion}</p>
         </div>
@@ -358,7 +361,19 @@
     galeriaContainer.innerHTML += galeriaHTML;
   });
 
-  // Lightbox funcionalidad para productos y galería
+  // Generar testimonios
+  const testimoniosContainer = document.getElementById('testimonios-container');
+  config.testimonios.forEach((testimonio, index) => {
+    const testimonioHTML = `
+        <div class="bg-rosa-200 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="${index * 200}">
+          <p class="text-gray-600 italic text-lg">“${testimonio.texto}”</p>
+          <p class="mt-4 font-bold text-rosa-50">– ${testimonio.autor}</p>
+        </div>
+      `;
+    testimoniosContainer.innerHTML += testimonioHTML;
+  });
+
+  // Lightbox
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = lightbox.querySelector('img');
   const containers = [productosContainer, galeriaContainer];
@@ -378,7 +393,7 @@
     }
   });
 
-  // Menú Sticky con logo dinámico
+  // Menú Sticky
   const navbar = document.getElementById('navbar');
   const navbarLogo = document.getElementById('navbar-logo');
   window.addEventListener('scroll', () => {
@@ -391,10 +406,13 @@
     }
   });
 
-  // Menú Móvil
+  // Menú Móvil (cerrar al hacer clic en enlace)
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+  });
 
   // Botón Volver Arriba
   const scrollTopBtn = document.getElementById('scroll-top');
@@ -403,7 +421,27 @@
   });
   scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  // Llenar formulario de contacto
+  // Formulario con mensaje de confirmación
+  const contactForm = document.getElementById('contact-form');
+  const formSuccess = document.getElementById('form-success');
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(contactForm);
+    try {
+      await fetch('/', {
+        method: 'POST',
+        body: formData
+      });
+      contactForm.reset();
+      formSuccess.style.display = 'block';
+      setTimeout(() => formSuccess.style.display = 'none', 3000); // Ocultar después de 3 segundos
+    } catch (error) {
+      console.error('Error al enviar el formulario:', error);
+      alert('Hubo un error al enviar el formulario. Intenta de nuevo.');
+    }
+  });
+
+  // Llenar formulario
   function fillContactForm(productName) {
     window.location.hash = '#contacto';
     const eventField = document.querySelector('input[name="event"]');
