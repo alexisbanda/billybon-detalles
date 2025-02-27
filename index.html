@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Souvenirs personalizados y maquetas únicas en Vancouver, envíos gratis en 24h">
-  <meta name="keywords" content="souvenirs Vancouver, maquetas personalizadas, toppers eventos">
-  <title>Billybon Detalles Vancouver | Vancouver Landings</title>
+  <meta name="description" content="Souvenirs personalizados y maquetas únicas en Ecuador, envíos gratis en 24h">
+  <meta name="keywords" content="souvenirs Ecuador, maquetas personalizadas, toppers eventos">
+  <title>Billybon Detalles | Vancouver Landings</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -20,11 +20,11 @@
     .bg-rosa-300 { background-color: #FF6699; }
     .bg-rosa-200 { background-color: #FF99B4; }
     .text-rosa-600 { color: #FF4081; }
-    .hover:bg-rosa-200 { background-color: #FF99B4; }
+    .hover:bg-rosa-200:hover { background-color: #FF99B4; }
     .text-rosa-300 { color: #FF6699; }
     .text-rosa-100 { color: #FFF5F7; }
     .text-rosa-50 { color: #FFCCCB; }
-    .hover:shadow-lg { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+    .hover:shadow-lg:hover { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
     #navbar {
       transition: all 0.3s ease;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -40,9 +40,7 @@
       width: 3rem;
       opacity: 1;
     }
-    #navbar-logo.hidden {
-      opacity: 0;
-    }
+    #navbar-logo.hidden { opacity: 0; }
     .badge {
       position: absolute;
       top: 10px;
@@ -50,7 +48,7 @@
       background-color: #FF99B4;
       color: #FFFFFF;
       padding: 0.5rem 1rem;
-      border-radius: 9999px; /* Tailwind: rounded-full */
+      border-radius: 9999px;
       font-size: 0.875rem;
       font-weight: 600;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -61,21 +59,72 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-5px); }
     }
+    button:active {
+      transform: scale(0.95);
+      transition: transform 0.1s ease;
+    }
+    #scroll-top {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #FF6699;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 9999px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      display: none;
+      z-index: 50;
+    }
+    #scroll-top:hover {
+      background-color: #FF99B4;
+    }
+    #lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    #lightbox.active { display: flex; }
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    /* Estilo para el ícono de Instagram */
+    .instagram-link {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background-color: #FF6699;
+      color: white;
+      padding: 5px;
+      border-radius: 50%;
+      font-size: 1rem;
+      line-height: 1;
+      z-index: 10;
+    }
+    .instagram-link:hover {
+      background-color: #FF99B4;
+    }
   </style>
 </head>
 <body class="bg-gray-50">
 <!-- Menú Sticky (Navbar Fijo) -->
 <nav id="navbar" class="fixed top-0 left-0 w-full bg-transparent text-white py-2 z-50 transition-all duration-300">
   <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
-    <!-- Contenedor del logo y el nombre -->
     <div class="flex items-center space-x-4">
       <div id="navbar-logo" class="hidden">
-        <img src="https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,w_300/v1740524420/e0fdac21_q0oh9e.png" alt="Logo Billybon Detalles" class="w-12 h-12 object-contain rounded-full">
+        <img src="https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,w_300/v1740524420/e0fdac21_q0oh9e.png" alt="Logo de Billybon Detalles" class="w-12 h-12 object-contain rounded-full">
       </div>
       <h1 class="text-2xl font-bold">Billybon Detalles</h1>
     </div>
-
-    <!-- Menú de Navegación -->
     <div class="flex sm:hidden">
       <button id="menu-toggle" class="focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -83,7 +132,6 @@
         </svg>
       </button>
     </div>
-
     <div class="space-x-6 hidden sm:flex items-center">
       <a href="#productos" class="hover:text-rosa-200">Productos</a>
       <a href="#nosotros" class="hover:text-rosa-200">Nosotros</a>
@@ -93,8 +141,6 @@
       <a href="https://www.facebook.com/profile.php?id=100063504134357" target="_blank" class="hover:text-rosa-200 text-xl">📘</a>
       <a href="https://www.instagram.com/billybondetalles/" target="_blank" class="hover:text-rosa-200 text-xl">📷</a>
     </div>
-
-    <!-- Menú Móvil -->
     <div id="mobile-menu" class="hidden fixed top-16 left-0 w-full bg-rosa-600 p-4 flex flex-col items-center space-y-4 sm:hidden">
       <a href="#productos" class="hover:text-rosa-200">Productos</a>
       <a href="#nosotros" class="hover:text-rosa-200">Nosotros</a>
@@ -111,64 +157,51 @@
 
 <header class="relative text-center py-20">
   <div class="flex flex-col items-center">
-    <img src="https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,w_300/v1740524420/e0fdac21_q0oh9e.png" alt="Logo Billybon Detalles" class="w-32 md:w-48 lg:w-56 rounded-full shadow-lg mb-4">
-
+    <img src="https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,w_300/v1740524420/e0fdac21_q0oh9e.png" alt="Logo de Billybon Detalles Ecuador" class="w-32 md:w-48 lg:w-56 rounded-full shadow-lg mb-4">
     <h1 class="text-4xl font-extrabold text-white">Billybon Detalles</h1>
-    <p class="mt-4 text-lg text-white">Souvenirs Mágicos Hechos a Mano en Vancouver</p>
-
-    <a href="#contacto" class="bg-rosa-300 text-white px-8 py-3 rounded-full mt-6 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300">
-      Pide tu souvenir ahora
-    </a>
+    <p class="mt-4 text-lg text-white">Souvenirs Mágicos Hechos a Mano en Ecuador</p>
+    <a href="#contacto" class="bg-rosa-300 text-white px-8 py-3 rounded-full mt-6 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300">Pide tu souvenir ahora</a>
   </div>
 </header>
 
 <section id="productos" class="py-20 text-center" data-aos="fade-up">
   <h2 class="text-3xl font-bold text-rosa-600">Productos Destacados</h2>
-  <div id="productos-container" class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 max-w-6xl mx-auto px-6">
-    <!-- Los productos se generarán dinámicamente aquí -->
-  </div>
+  <div id="productos-container" class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 max-w-6xl mx-auto px-6"></div>
 </section>
 
 <section id="nosotros" class="py-20 text-center" data-aos="fade-up">
   <h2 class="text-3xl font-bold text-rosa-600">Nosotros</h2>
   <div class="max-w-4xl mx-auto px-6 mt-12">
-    <p class="text-lg text-gray-600">En Billybon Detalles, creamos souvenirs y maquetas personalizados que transforman tus eventos en momentos inolvidables. Con años de experiencia en Vancouver, combinamos arte, pasión y rapidez para ofrecer productos únicos hechos a mano, diseñados para bodas, cumpleaños, bautizos y más. Nos enorgullece apoyar a la comunidad local con envíos gratis en 24 horas.</p>
+    <p class="text-lg text-gray-600">En Billybon Detalles, creamos souvenirs y maquetas personalizados que transforman tus eventos en momentos inolvidables. Con años de experiencia en Ecuador, combinamos arte, pasión y rapidez para ofrecer productos únicos hechos a mano, diseñados para bodas, cumpleaños, bautizos y más. Nos enorgullece apoyar a la comunidad local con envíos gratis en 24 horas.</p>
   </div>
   <button class="bg-rosa-300 text-white px-8 py-3 rounded-full mt-8 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300" data-aos="fade-up">Conócenos más</button>
 </section>
 
 <section id="galeria" class="py-20 bg-gray-50 text-center" data-aos="fade-up">
   <h2 class="text-3xl font-bold text-rosa-600">Galería de Eventos</h2>
-  <div id="galeria-container" class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 max-w-6xl mx-auto px-6">
-    <!-- Los elementos de la galería se generarán dinámicamente aquí -->
-  </div>
+  <div id="galeria-container" class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 max-w-6xl mx-auto px-6"></div>
   <button class="bg-rosa-300 text-white px-8 py-3 rounded-full mt-12 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300" data-aos="fade-up">Ver más proyectos</button>
 </section>
 
 <section id="testimonios" class="py-20 bg-gray-50 text-center" data-aos="fade-up">
   <h2 class="text-3xl font-bold text-rosa-600">Lo que dicen nuestros clientes</h2>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 max-w-5xl mx-auto px-6">
-
     <div class="bg-rosa-200 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300" data-aos="fade-up">
       <p class="text-gray-600 italic text-lg">“¡Mis souvenirs para la boda fueron perfectos y llegaron a tiempo!”</p>
-      <p class="mt-4 font-bold text-rosa-50">– Ana, Vancouver 👰</p>
+      <p class="mt-4 font-bold text-rosa-50">– Ana, Quito 👰</p>
     </div>
-
     <div class="bg-rosa-200 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
       <p class="text-gray-600 italic text-lg">“Los toppers infantiles hicieron inolvidable el cumple de mi hijo.”</p>
-      <p class="mt-4 font-bold text-rosa-50">– Carlos, Vancouver 🎉</p>
+      <p class="mt-4 font-bold text-rosa-50">– Carlos, Guayaquil</p>
     </div>
-
     <div class="bg-rosa-200 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
       <p class="text-gray-600 italic text-lg">“La personalización fue increíble, y el envío fue rapidísimo.”</p>
-      <p class="mt-4 font-bold text-rosa-50">– Laura, Vancouver 💌</p>
+      <p class="mt-4 font-bold text-rosa-50">– Laura, Quito 💌</p>
     </div>
-
     <div class="bg-rosa-200 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
       <p class="text-gray-600 italic text-lg">“Los souvenirs para el bautizo superaron mis expectativas.”</p>
-      <p class="mt-4 font-bold text-rosa-50">– María, Vancouver 👶</p>
+      <p class="mt-4 font-bold text-rosa-50">– María, Quito 👶</p>
     </div>
-
   </div>
 </section>
 
@@ -190,15 +223,23 @@
     </div>
     <button type="submit" class="bg-rosa-300 text-white px-8 py-3 rounded-full mt-6 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="300">Enviar</button>
   </form>
-  <p class="mt-6 text-lg">O escríbeme: <a href="https://wa.me/+593991786353?text=Hola%20Billybon%20Detalles,%20quiero%20personalizar%20un%20souvenir." class="text-rosa-300 hover:text-rosa-200 underline font-medium" target="_blank" data-aos="fade-up" data-aos-delay="400">WhatsApp</a></p>
+  <p class="mt-6 text-lg">O escríbeme: <a href="https://wa.me/+593987480735?text=Hola%20Billybon%20Detalles,%20quiero%20personalizar%20un%20souvenir." class="text-rosa-300 hover:text-rosa-200 underline font-medium" target="_blank" data-aos="fade-up" data-aos-delay="400">WhatsApp</a></p>
 </section>
 
 <!-- Botón WhatsApp Flotante -->
-<a href="https://wa.me/593991786353?text=Hola%20Vancouver%20Landings,%20quiero%20personalizar%20un%20souvenir." class="fixed bottom-5 right-5 bg-rosa-300 text-white p-4 rounded-full shadow-lg hover:bg-rosa-200 hover:shadow-xl transition-all duration-300" target="_blank">
+<a href="https://wa.me/+593987480735?text=Hola%Billybon%20Detalles,%20quiero%20personalizar%20un%20souvenir." class="fixed bottom-5 right-5 bg-rosa-300 text-white p-4 rounded-full shadow-lg hover:bg-rosa-200 hover:shadow-xl transition-all duration-300" target="_blank">
   <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
     <path d="M12.003 2.001c-5.523 0-10 4.477-10 10 0 2.136.699 4.155 1.88 5.79l-1.246 4.62 4.744-1.234A9.937 9.937 0 0012.003 22c5.523 0 10-4.477 10-10s-4.477-10-10-10zm4.784 13.456c-.195-.195-.46-.298-.727-.298-.267 0-.53.103-.725.298l-1.468 1.468c-1.146-1.146-2.347-2.073-3.586-2.794-.312-.183-.687-.183-1 0-1.24.721-2.44 1.648-3.585 2.794l-1.468-1.468c-.195-.195-.458-.298-.725-.298-.267 0-.531.103-.726.298-.39.39-.39 1.024 0 1.414l1.467 1.467c1.212 1.212 2.514 2.189 3.861 2.929.333.183.708.183 1.041 0 1.346-.74 2.649-1.717 3.86-2.929l1.468-1.467c.195-.195.195-.819 0-1.014z"/>
   </svg>
 </a>
+
+<!-- Botón Volver Arriba -->
+<button id="scroll-top" class="fixed bottom-5 left-5 bg-rosa-300 text-white p-3 rounded-full shadow-lg hover:bg-rosa-200 transition-all duration-300">↑</button>
+
+<!-- Lightbox -->
+<div id="lightbox">
+  <img src="" alt="Imagen ampliada">
+</div>
 
 <footer class="bg-rosa-600 text-white py-8 text-center">
   <p class="text-lg">© 2025 Vancouver Landings | Souvenirs que hacen únicos tus eventos</p>
@@ -213,8 +254,6 @@
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-</body>
-</html>
 <script>
   AOS.init({
     duration: 300,
@@ -267,55 +306,76 @@
     }
   ];
 
-  // Generar productos dinámicamente
+  // Generar productos dinámicamente con lightbox
   const productosContainer = document.getElementById('productos-container');
   productos.forEach(producto => {
     const productoHTML = `
-      <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 relative">
-        <img src="${producto.imagen}" alt="${producto.nombre} Billybon" loading="lazy" class="rounded-lg w-full h-64 object-cover object-center">
-        <span class="badge">${producto.badge}</span>
-        <h3 class="text-xl font-bold mt-4 text-rosa-600">${producto.nombre}</h3>
-        <p class="text-gray-600 text-sm mt-2">${producto.descripcion}, $${producto.precio}</p>
-        <button onclick="fillContactForm('${producto.nombre}', 1)" class="bg-rosa-300 text-white px-5 py-2 rounded-full mt-4 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300">Personalizar</button>
-      </div>
-    `;
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 relative">
+          <img src="${producto.imagen}" alt="${producto.nombre} - ${producto.descripcion}" loading="lazy" class="rounded-lg w-full h-64 object-cover object-center cursor-pointer" data-image="${producto.imagen}">
+          <span class="badge">${producto.badge}</span>
+          <h3 class="text-xl font-bold mt-4 text-rosa-600">${producto.nombre}</h3>
+          <p class="text-gray-600 text-sm mt-2">${producto.descripcion}, $${producto.precio}</p>
+          <button onclick="fillContactForm('${producto.nombre}', 1)" class="bg-rosa-300 text-white px-5 py-2 rounded-full mt-4 hover:bg-rosa-200 hover:shadow-lg transition-all duration-300">Personalizar</button>
+        </div>
+      `;
     productosContainer.innerHTML += productoHTML;
   });
 
   // Arreglo de galería
   const galeria = [
     {
-      imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1,g_auto/v1740581884/WhatsApp_Image_2025-02-25_at_19.28.30_3_pi3rjg.jpg", // Placeholder, reemplaza con la imagen real
+      imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1/v1740625815/b455dcb4-4b1b-4c96-b65b-1e22bf7b1caf_m0vidl.jpg", // Placeholder, reemplaza con la imagen real
       descripcion: "Bodas personalizadas",
       enlace: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTcwMjEwMDIyODc2Njg3?story_media_id=2521957682274088239_1270379838&igsh=ZHo4aHJrempxYzAy"
     },
     {
-      imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1/v1740581884/WhatsApp_Image_2025-02-25_at_19.28.30_ckcyjq.jpg", // Placeholder, reemplaza con la imagen real
+      imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1/v1740625816/44610b1f-cec6-46bc-ad4b-5ea0d47d870d_bfwucu.jpg", // Placeholder, reemplaza con la imagen real
       descripcion: "Bautizos y eventos",
       enlace: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODgwNDA0NTg3ODIwODMz?story_media_id=2409663449264367629_1270379838&igsh=MXBhcHozYmRndmhu"
     },
     {
-      imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,w_400,h_400,ar_1:1/v1740581885/WhatsApp_Image_2025-02-25_at_19.28.30_1_o9h6f2.jpg", // Placeholder, reemplaza con la imagen real
+      imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1/v1740625816/63868376-b268-4068-8e1b-a0a7a4315476_nruamc.jpg", // Placeholder, reemplaza con la imagen real
       descripcion: "Regalos Personalizados",
       enlace: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDE3NDE3NTI4NjkxMDc0?story_media_id=3367446618859240636_1270379838&igsh=MWVoNnp2Y2k1cm9pOA=="
     },
     {
-      imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1/v1740581884/WhatsApp_Image_2025-02-25_at_19.28.30_2_ahtc11.jpg", // Placeholder, reemplaza con la imagen real
+      imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,b_gen_fill,w_400,h_400,ar_1:1/v1740625815/31444523-2164-4efa-abaa-479c7c3a4464_aaoubr.jpg", // Placeholder, reemplaza con la imagen real
       descripcion: "Llaveros temáticos",
       enlace: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDM4MTAyNDYyMTgyMTc1?story_media_id=3062774449263649452_1270379838&igsh=NWM5dDBkZGhodzR4"
     }
   ];
 
-  // Generar galería dinámicamente
+  // Generar galería dinámicamente con lightbox y enlace a Instagram
   const galeriaContainer = document.getElementById('galeria-container');
   galeria.forEach(item => {
     const galeriaHTML = `
-      <a href="${item.enlace}" target="_blank" class="bg-white p-6 rounded-xl shadow-md hover:scale-105 transition-all duration-300">
-        <img src="${item.imagen}" alt="${item.descripcion} Billybon" loading="lazy" class="rounded-lg w-full h-64 object-cover object-center">
-        <p class="text-gray-600 text-sm mt-2">${item.descripcion}</p>
-      </a>
-    `;
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 relative">
+          <img src="${item.imagen}" alt="Ejemplo de ${item.descripcion} por Billybon Detalles" loading="lazy" class="rounded-lg w-full h-64 object-cover object-center cursor-pointer" data-image="${item.imagen}">
+          <a href="${item.enlace}" target="_blank" class="instagram-link">📷</a>
+          <p class="text-gray-600 text-sm mt-2">${item.descripcion}</p>
+        </div>
+      `;
     galeriaContainer.innerHTML += galeriaHTML;
+  });
+
+  // Lightbox funcionalidad para productos y galería
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+  const containers = [productosContainer, galeriaContainer];
+  containers.forEach(container => {
+    container.addEventListener('click', (e) => {
+      const img = e.target.closest('img[data-image]');
+      if (img) {
+        lightboxImg.src = img.getAttribute('data-image');
+        lightboxImg.alt = img.getAttribute('alt');
+        lightbox.classList.add('active');
+      }
+    });
+  });
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('active');
+    }
   });
 
   // Menú Sticky con logo dinámico
@@ -336,6 +396,13 @@
   const mobileMenu = document.getElementById('mobile-menu');
   menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
+  // Botón Volver Arriba
+  const scrollTopBtn = document.getElementById('scroll-top');
+  window.addEventListener('scroll', () => {
+    scrollTopBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
+  });
+  scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
   // Llenar formulario de contacto
   function fillContactForm(productName, quantity) {
     window.location.hash = '#contacto';
@@ -343,3 +410,5 @@
     eventField.value = `${productName} - Cantidad: ${quantity}`;
   }
 </script>
+</body>
+</html>
