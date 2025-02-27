@@ -304,7 +304,7 @@
   };
 
   // Reemplazar placeholders
-  document.title = `${config.empresa.nombre} | %TITULO_LANDING%`;
+  document.title = `${config.empresa.nombre}`;
   document.querySelector('meta[name="description"]').content = config.empresa.descripcion;
   document.querySelector('meta[name="keywords"]').content = config.empresa.keywords;
   document.querySelectorAll('h1').forEach(h1 => h1.textContent = config.empresa.nombre);
