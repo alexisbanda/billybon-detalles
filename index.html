@@ -112,7 +112,6 @@
     .instagram-link:hover {
       background-color: #FF99B4;
     }
-    /* Estilo para el mensaje de confirmación */
     #form-success {
       display: none;
       position: fixed;
@@ -288,8 +287,7 @@
       { imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,w_400,h_400,ar_1:1/v1740581885/WhatsApp_Image_2025-02-25_at_19.28.30_1_o9h6f2.jpg", nombre: "Regalos Personalizados Navideños", descripcion: "Caja de 6 bombillos navideños con hilo dorado o imán para la nevera, 6 cm", precio: 35, badge: "Personalizado 100%", stock: true },
       { imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1/v1740581884/WhatsApp_Image_2025-02-25_at_19.28.30_2_ahtc11.jpg", nombre: "Letras de Resina Epóxica", descripcion: "Llaveros personalizados de letras A-Z, colores y diseños con significado del nombre", precio: 12, badge: "Personalizado 100%", stock: true },
       { imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1,g_auto/v1740581884/WhatsApp_Image_2025-02-25_at_19.28.30_3_pi3rjg.jpg", nombre: "Topper de Novios", descripcion: "Novios personalizados con ojitos 3D, base acrílica, 15 a 20 cm de alto", precio: 30, badge: "Personalizado 100%", stock: true },
-      { imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,b_gen_fill,w_400,h_400,ar_1:1/v1740581884/WhatsApp_Image_2025-02-25_at_20.06.39_ip4fdw.jpg", nombre: "Velas con aroma", descripcion: "Velas con frascos personalizado colores y fragancia", precio: 30, badge: "Hecho a Mano", stock: true },
-      { imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,w_400,h_400,ar_1:1/v1740581885/WhatsApp_Image_2025-02-25_at_19.28.30_1_o9h6f2.jpg", nombre: "Producto Extra 1", descripcion: "Descripción de ejemplo", precio: 20, badge: "Hecho a Mano", stock: true }
+      { imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_pad,b_gen_fill,w_400,h_400,ar_1:1/v1740581884/WhatsApp_Image_2025-02-25_at_20.06.39_ip4fdw.jpg", nombre: "Velas con aroma", descripcion: "Velas con frascos personalizado colores y fragancia", precio: 30, badge: "Hecho a Mano", stock: true }
     ],
     galeria: [
       { imagen: "https://res.cloudinary.com/dvm4ql8eo/image/upload/c_fill,w_400,h_400,ar_1:1/v1740625815/b455dcb4-4b1b-4c96-b65b-1e22bf7b1caf_m0vidl.jpg", descripcion: "Bodas personalizadas", enlace: "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTcwMjEwMDIyODc2Njg3?story_media_id=2521957682274088239_1270379838&igsh=ZHo4aHJrempxYzAy" },
@@ -406,7 +404,7 @@
     }
   });
 
-  // Menú Móvil (cerrar al hacer clic en enlace)
+  // Menú Móvil
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
@@ -434,18 +432,23 @@
       });
       contactForm.reset();
       formSuccess.style.display = 'block';
-      setTimeout(() => formSuccess.style.display = 'none', 3000); // Ocultar después de 3 segundos
+      setTimeout(() => formSuccess.style.display = 'none', 3000);
     } catch (error) {
       console.error('Error al enviar el formulario:', error);
       alert('Hubo un error al enviar el formulario. Intenta de nuevo.');
     }
   });
 
-  // Llenar formulario
+  // Llenar formulario y forzar desplazamiento
   function fillContactForm(productName) {
-    window.location.hash = '#contacto';
+    const contactSection = document.getElementById('contacto');
     const eventField = document.querySelector('input[name="event"]');
+    const nameField = document.querySelector('input[name="name"]');
+    nameField.focus();
     eventField.value = `${productName}`;
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+    // Opcional: Limpiar el hash si deseas mantener la URL limpia
+    history.replaceState(null, null, ' ');
   }
 </script>
 </body>
